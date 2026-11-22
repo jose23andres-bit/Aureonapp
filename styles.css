@@ -81,7 +81,7 @@ p { margin: 0 0 1rem; }
 .hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; z-index: -2; }
 .hero__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(11,11,9,.35) 0%, rgba(11,11,9,.55) 45%, var(--bg) 100%); }
 .hero__inner { padding-block: 5rem 3.2rem; }
-.hero h1 { font-size: clamp(2.3rem, 8.5vw, 4.6rem); }
+.hero h1 { font-size: clamp(2.3rem, 8.5vw, 4.6rem); margin-bottom: 1.1rem; }
 .hero h1 em { color: var(--gold-2); font-style: italic; }
 .byline { margin: 2rem 0 0; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
 
@@ -177,7 +177,7 @@ p { margin: 0 0 1rem; }
   .tabbar { display: none; }
   .desk-nav { display: flex; }
   .cards { grid-template-columns: repeat(3, 1fr); }
-  .card { grid-template-columns: 1fr; row-gap: .3rem; padding: 1.5rem; }
+  .card { grid-template-columns: 1fr; row-gap: .3rem; padding: 1.5rem; align-content: start; align-items: start; }
   .card .ico { grid-row: auto; margin-bottom: .6rem; }
   .card__t, .card__d { grid-column: 1; }
   .card__go { position: absolute; top: 1.4rem; right: 1.4rem; grid-column: auto; grid-row: auto; }
