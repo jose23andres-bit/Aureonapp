@@ -1,0 +1,27 @@
+AUREON AI PROJECT — VALIDACIÓN ESTRUCTURAL
+
+Resultado: 10 comprobaciones estáticas superadas.
+
+- package.json presente
+- componente AI Lab presente
+- enlace Revolut correcto
+- precio de 50 € visible en el componente
+- aviso de entrega manual presente
+- kit digital incluido fuera de la carpeta pública
+- dos ZIP de origen de Vercel preservados
+- documentación del catálogo de vehículos presente
+- documentación de villas presente
+- configuración Netlify presente
+
+Comparación con el ZIP original:
+- 0 archivos originales desaparecidos
+- 6 archivos originales modificados para integrar cambios previos (README.md, AGENTS.md, netlify/functions/api.mts, src/styles.css, src/routes/$.tsx, src/components/aureon.tsx)
+- los demás archivos originales se conservaron byte por byte
+
+Pendiente / no verificado:
+- instalación de dependencias, typecheck, tests y build real
+- pruebas de navegador/QA visual
+- despliegue y verificación en Netlify
+- confirmación automática del pago de Revolut (el proceso sigue siendo manual)
+
+No se afirma que la web esté publicada ni que la compilación haya pasado.

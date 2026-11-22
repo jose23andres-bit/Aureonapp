@@ -1,0 +1,42 @@
+/* AUREON compact market tape. All selectors scoped to .mkt-* (no global rules). */
+.mkt-tape{position:relative;display:flex;align-items:stretch;height:34px;width:100%;overflow:hidden;background:linear-gradient(100deg,#0a0b09,#14130e 50%,#0a0b09);border-bottom:1px solid #c9a96a3d;font-family:'Manrope',system-ui,sans-serif}
+.mkt-tape::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,#e8c46d 50%,transparent);background-size:40% 100%;background-repeat:no-repeat;animation:mkt-edge 6s cubic-bezier(.7,0,.2,1) infinite;pointer-events:none}
+.mkt-label{position:relative;z-index:2;flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:0 14px 0 4.5%;color:#d8bf85;font-size:9px;font-weight:700;letter-spacing:2.2px;background:linear-gradient(90deg,#0a0b09 75%,transparent);clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.mkt-live{width:6px;height:6px;border-radius:50%;background:#4ed38b;box-shadow:0 0 8px #4ed38b;animation:mkt-pulse 2s ease-in-out infinite}
+.mkt-live.is-off{background:#77796f;box-shadow:none;animation:none}
+.mkt-viewport{position:relative;flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 94%,transparent)}
+.mkt-track{display:flex;width:max-content;height:100%;animation:mkt-scroll linear infinite;will-change:transform}
+.mkt-tape:hover .mkt-track,.mkt-tape:focus-within .mkt-track{animation-play-state:paused}
+.mkt-items{display:flex;align-items:center;height:100%;margin:0;padding:0;list-style:none}
+.mkt-item{display:flex;align-items:baseline;gap:7px;padding:0 18px;white-space:nowrap;font-size:11.5px;line-height:1;position:relative;animation:mkt-slash .7s cubic-bezier(.2,.8,.2,1) both}
+.mkt-item+.mkt-item::before{content:'';position:absolute;left:0;top:50%;width:1px;height:12px;transform:translateY(-50%) skewX(-20deg);background:#d5b77940}
+.mkt-name{color:#cfc6b1;font-weight:600;letter-spacing:.3px}
+.mkt-price{color:#f3efe4;font-variant-numeric:tabular-nums;font-weight:600}
+.mkt-chg{display:inline-flex;align-items:center;gap:3px;font-variant-numeric:tabular-nums;font-weight:700;font-size:11px}
+.mkt-chg i{font-style:normal;font-size:8px}
+.mkt-up .mkt-chg{color:#4ed38b}
+.mkt-down .mkt-chg{color:#ff6b5e}
+.mkt-flat .mkt-chg{color:#a3a49b}
+.mkt-note{color:#77796f!important;font-size:9.5px;letter-spacing:.2px}
+.mkt-status{margin:0;height:100%;display:flex;align-items:center;padding-left:14px;font-size:10.5px;color:#8e9088;line-height:1}
+/* Katana blade: a sharp diagonal light that slices across the tape */
+.mkt-blade{position:absolute;top:-20%;bottom:-20%;left:-30%;width:90px;transform:skewX(-28deg);background:linear-gradient(90deg,transparent,#fff3d01a 35%,#ffe7a8a6 50%,#fff3d01a 65%,transparent);mix-blend-mode:screen;pointer-events:none;animation:mkt-blade 7s cubic-bezier(.77,0,.18,1) infinite}
+
+@keyframes mkt-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mkt-blade{0%,62%{left:-30%;opacity:0}64%{opacity:1}80%{left:115%;opacity:1}81%,100%{left:115%;opacity:0}}
+@keyframes mkt-edge{0%{background-position:-60% 0}60%,100%{background-position:160% 0}}
+@keyframes mkt-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes mkt-slash{from{opacity:0;clip-path:polygon(0 0,0 0,0 100%,0 100%)}to{opacity:1;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}}
+
+@media (max-width:760px){
+  .mkt-tape{height:30px}
+  .mkt-label{padding-left:4%;letter-spacing:1.6px;font-size:8px}
+  .mkt-label span{display:none}
+  .mkt-item{font-size:10.5px;padding:0 13px;gap:5px}
+  .mkt-chg{font-size:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .mkt-track,.mkt-blade,.mkt-item,.mkt-live,.mkt-tape::after{animation:none!important}
+  .mkt-blade{display:none}
+  .mkt-viewport{overflow-x:auto}
+}

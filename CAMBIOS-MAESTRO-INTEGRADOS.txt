@@ -1,0 +1,10 @@
+AUREON AI PROJECT — ZIP MAESTRO
+
+Cambios acumulados incluidos en esta versión:
+- Banner Revolut con botones independientes para cuenta personal y empresa.
+- Cabecera panorámica tropical de Aureon AI, manteniendo la identidad negro/dorado.
+- Ibiza Global Radio sin reproductor visible, con intento de reproducción automática y reintento tras interacción; los navegadores pueden bloquear autoplay con sonido.
+- Zona clicable de “Guías IA y monetización” ajustada para alinearse con el banner visible y dirigir a /recursos.
+
+Este archivo reúne el código fuente del proyecto. No se ha publicado automáticamente en Netlify.
+Antes del despliegue, configura las variables de entorno y servicios externos que requiera tu proyecto.

@@ -1,0 +1,10 @@
+REPARACIÓN DE ADMINISTRADOR — 17/10/2026
+
+- 32 comprobaciones estáticas del proyecto: CORRECTAS (`node scripts/verify-aureon.mjs`).
+- Portal de clientes y CRM retirados de la interfaz.
+- Acceso administrativo normaliza correo y consulta el catálogo con el token autenticado.
+- Datos y tablas existentes de Supabase conservados; no se ejecutaron operaciones destructivas.
+- Build/typecheck NO ejecutados: dependencias no instaladas y sin acceso de red para descargar pnpm.
+- Despliegue de Netlify NO realizado desde este entorno.
+
+Consultar REPARACION-ADMIN-EXCLUSIVO-2026-10-17.md para los pasos de publicación y verificación final.

@@ -1,0 +1,67 @@
+/* Extracto de estilos Aureon AI Lab. Requiere variables CSS --line, --gold, --muted y clases globales .section, .inner, .button, .gold, .outline, .eyebrow. */
+/* AUREON AI LAB — curated skills experience */
+.ailab-page{padding-top:34px;padding-bottom:72px}
+.ailab-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;padding:34px 0 64px;border-bottom:1px solid var(--line)}
+.ailab-hero-copy h1{font-size:clamp(48px,5.4vw,78px);line-height:.98;letter-spacing:-1.8px;margin:22px 0 20px;max-width:720px}
+.ailab-lead{font-size:13px;line-height:2;max-width:610px;color:#c2c4b9}
+.ailab-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.ailab-trust{display:flex;align-items:center;gap:8px;margin-top:22px;color:#aeb1a6;font-size:10px;line-height:1.7}
+.ailab-trust svg{flex:none;color:var(--gold)}
+.ailab-orbit-card{min-height:360px;background:radial-gradient(ellipse at 50% 45%,#c8a46719,transparent 50%),linear-gradient(145deg,#20211b,#10110f 65%);border:1px solid #d5b77942;border-radius:3px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+.ailab-orbit-card:after{content:"";position:absolute;inset:12px;border:1px solid #ffffff09;pointer-events:none}
+.ailab-orbit-label,.ailab-orbit-foot{display:flex;justify-content:space-between;gap:10px;font-size:8px;letter-spacing:1.6px;color:#a6a99e;position:relative;z-index:1}
+.ailab-orbit-label span:last-child{color:var(--gold)}
+.ailab-orbit-art{height:245px;display:grid;place-items:center;position:relative}
+.ailab-orbit-ring{position:absolute;border:1px solid #d5b77940;border-radius:50%;width:150px;height:150px;transform:rotateX(63deg) rotate(20deg)}
+.ailab-orbit-ring.ring-two{width:220px;height:220px;transform:rotateX(66deg) rotate(-35deg);border-color:#d5b77924}
+.ailab-orbit-core{width:83px;height:83px;display:grid;place-items:center;border:1px solid #f0d99f;background:linear-gradient(145deg,#e4cc91,#a17e43);color:#17170f;font:54px Georgia,serif;position:relative;box-shadow:0 0 65px #d5b77930;z-index:1}
+.ailab-orbit-core span{font:16px sans-serif;position:absolute;right:10px;top:10px}
+.ailab-orbit-foot{border-top:1px solid #ffffff19;padding-top:16px;letter-spacing:.4px}.ailab-orbit-foot b{color:var(--gold);font-size:14px}
+.ailab-priority{margin:28px 0 60px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;padding:24px;border:1px solid #d5b7793b;background:linear-gradient(105deg,#d5b7790b,transparent);border-radius:3px}
+.ailab-priority-icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid #d5b77955;color:var(--gold)}
+.ailab-priority h2{font-size:28px;margin:6px 0 7px}.ailab-priority p{font-size:11px;line-height:1.8;max-width:770px}
+.ailab-priority>.textlink{white-space:nowrap;align-self:center}
+.ailab-library .section-heading{margin-bottom:23px}.ailab-library .section-heading h2{font-size:clamp(34px,4vw,47px)}
+.ailab-library .section-heading p{max-width:720px;font-size:12px}
+.ailab-search{margin:20px 0 13px;display:flex;align-items:center;gap:12px;max-width:100%;border:1px solid #ffffff25;background:#141511;padding:0 15px;min-height:50px;color:var(--gold)}
+.ailab-search input{border:0;outline:0;background:transparent;color:#f3f0e8;width:100%;min-width:0;font:12px 'Manrope',sans-serif;min-height:48px}
+.ailab-search input::placeholder{color:#8d9085}
+.ailab-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:23px}
+.ailab-filters button{border:1px solid #ffffff20;background:#151611;color:#b9bbae;padding:9px 15px;font-size:10px;letter-spacing:.2px;border-radius:2px}
+.ailab-filters button.selected{background:var(--gold);border-color:var(--gold);color:#191a13}
+.ailab-skill-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ailab-skill-card{min-width:0;display:flex;flex-direction:column;padding:21px;background:linear-gradient(145deg,#1a1b16,#121310);border:1px solid #ffffff18;transition:border-color .2s,transform .2s}
+.ailab-skill-card:hover{border-color:#d5b77988;transform:translateY(-2px)}
+.ailab-skill-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ailab-skill-icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid #d5b7794a;color:var(--gold);background:#d5b7790b}
+.ailab-index{font-size:8px;letter-spacing:1.3px;color:#777d70}
+.ailab-skill-badge{font-size:8px;letter-spacing:.4px;text-transform:uppercase;color:var(--gold);margin-top:20px}
+.ailab-skill-card h3{font-size:21px;line-height:1.2;margin:7px 0 10px;color:#f1efe6}
+.ailab-skill-card>p{font-size:11px;line-height:1.9;min-height:82px;color:#b1b4a9}
+.ailab-benefit{margin-top:14px;padding:12px 0;border-top:1px solid #ffffff14;color:#c8c9bf;font-size:10px;line-height:1.8}
+.ailab-benefit span{display:block;color:#8e9185;font-size:8px;letter-spacing:1.3px;margin-bottom:4px}
+.ailab-card-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:13px;padding-top:14px;border-top:1px solid #ffffff14}
+.ailab-card-actions a,.ailab-card-actions button{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:10px;background:none;border:0;padding:0;cursor:pointer}
+.ailab-card-actions button{color:#d8d9cf}.ailab-command{display:block;margin-top:13px;padding:10px;background:#090a08;border:1px solid #ffffff12;color:#bfc6b2;font:9px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;white-space:normal}
+.ailab-disclaimer{font-size:10px;margin-top:20px;line-height:1.9}
+.ailab-empty{grid-column:1/-1;padding:40px;text-align:center;border:1px dashed #ffffff22;color:var(--muted);font-size:12px}
+.ailab-next{margin-top:72px;padding-top:55px;border-top:1px solid var(--line)}
+.ailab-next-head{max-width:720px;margin-bottom:25px}.ailab-next-head h2{font-size:clamp(32px,4vw,46px);margin:8px 0}.ailab-next-head p{font-size:12px;line-height:1.9}
+.ailab-product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ailab-product-grid article{padding:22px;border:1px solid #ffffff18;background:#141511;min-width:0}
+.ailab-product-grid article>span{display:block;font-size:8px;letter-spacing:1.5px;color:#8f9286;margin-bottom:22px}
+.ailab-product-grid article>svg{color:var(--gold);margin-bottom:12px}
+.ailab-product-grid h3{font-size:20px;margin-bottom:8px}.ailab-product-grid p{font-size:11px;line-height:1.8;min-height:60px}.ailab-product-grid small{display:block;color:var(--gold);font-size:9px;line-height:1.7;margin-top:18px}
+.ailab-bottom-cta{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:55px;padding:27px;border:1px solid #d5b7794a;background:radial-gradient(ellipse at 100% 0,#d5b7790e,transparent 48%),#151611}
+.ailab-bottom-cta h2{font-size:clamp(26px,3vw,36px);margin:7px 0}.ailab-bottom-cta p{font-size:11px;line-height:1.8;max-width:650px}.ailab-bottom-cta .button{flex:none}
+@media(max-width:1050px){.ailab-hero{gap:24px}.ailab-skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ailab-priority{grid-template-columns:auto 1fr}.ailab-priority>.textlink{grid-column:2}}
+@media(max-width:760px){.ailab-page{padding-top:18px}.ailab-hero{grid-template-columns:1fr;padding:24px 0 38px;gap:24px}.ailab-hero-copy h1{font-size:clamp(43px,11vw,64px);letter-spacing:-1px;margin:18px 0}.ailab-lead{font-size:12px}.ailab-orbit-card{min-height:290px;padding:17px}.ailab-orbit-art{height:190px}.ailab-orbit-ring{width:125px;height:125px}.ailab-orbit-ring.ring-two{width:175px;height:175px}.ailab-orbit-core{width:70px;height:70px;font-size:46px}.ailab-priority{margin:25px 0 42px;padding:17px;gap:13px;align-items:start}.ailab-priority-icon{width:40px;height:40px}.ailab-priority h2{font-size:24px}.ailab-priority p{font-size:10px}.ailab-priority>.textlink{grid-column:1/-1}.ailab-skill-grid,.ailab-product-grid{grid-template-columns:1fr}.ailab-skill-card>p{min-height:0}.ailab-product-grid p{min-height:0}.ailab-bottom-cta{flex-direction:column;align-items:flex-start;padding:20px}.ailab-bottom-cta .button{width:100%}}
+@media(max-width:420px){.ailab-hero-actions{display:grid;grid-template-columns:1fr}.ailab-hero-actions .button{width:100%}.ailab-orbit-foot{font-size:7px}.ailab-filters{overflow:auto;flex-wrap:nowrap;padding-bottom:5px}.ailab-filters button{white-space:nowrap}.ailab-card-actions{flex-wrap:wrap}.ailab-priority{grid-template-columns:1fr}.ailab-priority>.textlink{grid-column:1}}
+
+
+.ailab-checkout{display:flex;flex-direction:column;align-items:flex-start;gap:7px;margin-top:14px}
+.ailab-checkout .button{font-size:10px;padding:10px 12px;min-height:38px}
+.ailab-checkout .button{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.ailab-delivery-note{font-size:10px!important;line-height:1.7!important;color:#b9bbae!important;min-height:0!important;margin:8px 0 0!important}
+.ailab-support-link{display:inline-flex;align-items:center;gap:5px;color:var(--gold);font-size:10px;text-decoration:none;margin-top:4px}
+.ailab-support-link:hover{text-decoration:underline}

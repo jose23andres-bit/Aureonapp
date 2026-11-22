@@ -1,0 +1,31 @@
+VALIDACIÓN DE AUREON AI PROJECT + AI LAB
+Fecha: 16/10/2026
+
+COMPROBACIONES ESTÁTICAS: 9/9 correctas
+- AI Lab aparece en navegación.
+- AI Lab está conectado a la ruta catch-all.
+- La ruta incluye título y descripción.
+- El catálogo contiene lógica de búsqueda y filtros.
+- El asistente comercial está conectado a /api/assistant y requiere OPENAI_API_KEY.
+- El estado de checkout depende de configuración privada de Stripe.
+- Checkout solo acepta el producto allowlisted web-kits y crea sesiones alojadas de Stripe.
+- Hay estilos responsive para AI Lab y la tarjeta de pago.
+- Se añadió una prueba de componente para el catálogo.
+
+BUILD / TYPECHECK / TESTS DE VITEST
+No ejecutables en este entorno porque no existen node_modules y no se pudo conectar con registry.npmjs.org para instalar dependencias.
+- `npm run typecheck`: bloqueado, falta vite/client (dependencias no instaladas).
+- `npm run build`: bloqueado, comando vite no encontrado.
+- `npm test`: bloqueado, comando vitest no encontrado.
+
+NAVEGADOR / DEPLOY PREVIEW
+No verificado visualmente en navegador real. No hay sesión autenticada ni herramienta de despliegue de Netlify disponible en este entorno. No se ha publicado ningún cambio en producción.
+
+ASISTENTE IA
+El widget comercial y la API ya existían en el proyecto. La activación requiere configurar OPENAI_API_KEY como variable privada de Netlify. Los avisos por email/WhatsApp dependen de sus variables adicionales.
+
+PAGOS
+Se añadió integración de servidor para Stripe Checkout. Permanece desactivada por defecto. Requiere configurar STRIPE_SECRET_KEY y STRIPE_PRICE_AUREON_WEB_KITS en Netlify. No se han activado cobros reales ni se ha creado un precio comercial. Antes de cobrar, definir producto, precio, impuestos, condiciones, reembolsos, privacidad y soporte.
+
+ARCHIVO
+Se debe probar el ZIP en un deploy preview antes de sustituir la versión publicada.

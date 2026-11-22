@@ -1,0 +1,61 @@
+Actúa como un experto en SEO, monetización web con Google AdSense y creación de nichos rentables. Tu objetivo es crear un documento EXTENSO, PROFESIONAL y DETALLADO sobre un nicho web rentable.
+
+Quiero que elijas UN nicho concreto (no genérico) con alto potencial de monetización y tráfico orgánico. El documento debe estar pensado como si fuera un plan completo para crear una web rentable desde cero.
+
+Estructura el contenido de la siguiente forma:
+
+1. Selección del nicho
+    Explica qué nicho has elegido y por qué.
+    Nivel de competencia (bajo, medio, alto).
+    Potencial de tráfico (estimación mensual).
+    Tipo de usuario que busca este contenido (intención de búsqueda).
+2. Justificación del nicho
+    Por qué es rentable en AdSense.
+    CPC estimado del nicho.
+    RPM estimado.
+    Estacionalidad (si aplica).
+    Tendencias (si está creciendo o no).
+3. Subnichos y categorías
+    Divide el nicho en subnichos claros.
+    Propón categorías para la web (estructura tipo blog).
+    Explica por qué esas categorías.
+4. Plan de contenido completo
+    Genera un listado de mínimo 50-100 artículos.
+    Clasifícalos por categorías.
+    Incluye títulos SEO optimizados (long-tail keywords).
+    Indica la intención de búsqueda de cada artículo (informativa, transaccional, comparativa, etc.).
+5. Estrategia SEO
+    Tipo de keywords a atacar (long tail, low competition, etc.).
+    Estrategia de enlazado interno.
+    Arquitectura web recomendada.
+    Estrategia de crecimiento (publicación de artículos).
+6. Monetización
+    Cómo se monetiza con AdSense en este nicho.
+    Posiciones recomendadas de anuncios.
+    Otros métodos de monetización adicionales (afiliación, leads, etc.).
+    Estimación realista de ingresos con X visitas.
+7. Coste de contenido
+    Cuánto cuesta un artículo en este nicho (redactor).
+    Precio medio por palabra.
+    Presupuesto estimado para lanzar la web (ejemplo: 50 artículos).
+    Alternativa usando IA.
+8. Proyección de ingresos
+    Escenario conservador, medio y optimista.
+    Tiempo estimado para generar ingresos.
+    Escalabilidad del proyecto.
+9. Ejemplo práctico
+    Simula cómo sería una web real de este nicho.
+    Nombre de dominio sugerido.
+    Estructura inicial (home + categorías).
+10. Conclusión
+    Resume si vale la pena o no este nicho.
+    Riesgos principales.
+    Recomendación final.
+
+IMPORTANTE:
+Redacta todo de forma clara, profesional y profunda (mínimo 2000-3000 palabras).
+No des respuestas superficiales.
+Usa datos realistas y aproximaciones coherentes.
+Enfócalo totalmente a alguien que quiere ganar dinero con páginas web y AdSense.
+Evita generalidades: todo debe ser accionable.
+El informe debe parecer un informe real de consultoría SEO/negocio.

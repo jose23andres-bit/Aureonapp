@@ -1,0 +1,21 @@
+AUREON AI PROJECT — VALIDACIÓN DE MONETIZACIÓN Y ADMINISTRACIÓN
+Fecha: 16/10/2026
+
+COMPROBACIONES REALIZADAS
+- 18 comprobaciones estáticas: OK (node scripts/verify-aureon.mjs).
+- Transpilación sintáctica TypeScript/TSX: 42/42 archivos sin errores sintácticos.
+- Supabase: 35 fichas en public.content_items; 16 coches en venta, 16 modelos de alquiler, 2 fichas inmobiliarias y 1 oportunidad de inversión.
+- Supabase Storage: políticas verificadas para subir, actualizar y borrar objetos del bucket aureon-catalog solo por el administrador autorizado; lectura pública de imágenes del catálogo.
+- 55 rutas de imagen guardadas en el catálogo comprobadas contra los archivos del proyecto: 0 faltantes.
+- Los cursos/mentorías muestran los dos enlaces Hotmart que ya estaban en el proyecto.
+- El apartado de relojes/joyas ya está conectado a fichas de afiliación de Supabase, pero no se han inventado enlaces de tracking ni se han publicado productos sin programa afiliado aprobado.
+- Oportunidad de Dolores (60.000 € sin reformar) convertida en ficha editable de Supabase.
+
+PENDIENTE ANTES DE PRODUCCIÓN
+- Build, Vitest, ESLint y typecheck completos: no ejecutados; faltan pnpm y node_modules. `tsc --noEmit` no puede resolver `vite/client` sin las dependencias.
+- Despliegue Netlify: no realizado. El ZIP contiene el código actualizado, pero la web pública seguirá con la versión anterior hasta desplegarlo.
+- Afiliación: crear/confirmar cuentas en Amazon Afiliados, Awin, AliExpress Portals y Hotmart; obtener enlaces propios aprobados; comprobar atribución, comisiones y condiciones. Sin estos enlaces no se puede asegurar que las compras generen comisión.
+- Revisión manual de la web en móvil después de desplegar.
+
+No se afirma que el build o la publicación hayan sido completados. No se garantizan ventas ni ingresos.
+- Aviso de seguridad de Supabase (existente): la protección frente a contraseñas filtradas está desactivada. Recomendación: activarla en Auth > Security/Password settings antes de producción.

@@ -1,0 +1,37 @@
+AUREON AI PROJECT — INFORME DE PROFESIONALIZACIÓN
+Fecha: 16/10/2026
+
+RESULTADO DE COMPROBACIONES ESTÁTICAS: SUPERADO
+13 comprobaciones pasaron con `node scripts/verify-aureon.mjs`:
+- navegación y ruta de AI Lab
+- búsqueda y filtros del catálogo
+- enlace Revolut exacto y precio de 50 €
+- aviso de entrega manual
+- conexión de API del asistente y configuración de clave
+- controles estáticos del checkout de Stripe existente en el servidor
+- estilos responsive de AI Lab
+- pruebas de componente presentes y actualizadas
+- categorías comerciales principales
+- imágenes de categorías presentes
+- sitemap y robots.txt
+- configuración del directorio de build de Netlify
+
+MEJORAS INCORPORADAS:
+- `docs/PLAN-PROFESIONALIZACION-AUREON.md`: plan completo por fases y lista de publicación.
+- `docs/RUNBOOK-DESPLIEGUE-NETLIFY.md`: procedimiento de preview, validación y rollback.
+- `public/sitemap.xml`: sitemap de las rutas públicas conocidas.
+- `public/robots.txt`: referencia al sitemap; mantiene disallow de /admin y /api.
+- `src/routes/index.tsx`: metadatos SEO/Open Graph y canonical de portada.
+- `src/components/ai-lab.test.tsx`: prueba de compra por Revolut y aviso de entrega manual.
+- `scripts/verify-aureon.mjs`: verificador estático ampliado.
+- `package.json`: comando `pnpm verify:aureon`.
+
+PENDIENTE / NO AFIRMADO COMO COMPLETADO:
+- No se ejecutaron Vitest, TypeScript, ESLint ni build porque este entorno no tiene pnpm ni node_modules instalados.
+- No se realizó revisión real en navegador.
+- No se creó deploy de preview ni se publicó en Netlify.
+- No se probaron pagos reales ni webhooks.
+- El sitemap usa el dominio aureonaiproject.netlify.app; cambiarlo si el dominio canónico definitivo es otro.
+- Los metadatos y el sitemap son mejoras iniciales; hace falta verificar todas las rutas y el contenido antes de enviar el sitemap a Google.
+
+NO PUBLICAR EN PRODUCCIÓN hasta pasar los pasos pendientes del plan.

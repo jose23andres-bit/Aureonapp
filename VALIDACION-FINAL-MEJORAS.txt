@@ -1,0 +1,18 @@
+AUREON AI PROJECT — VALIDACIÓN DE MEJORAS
+
+Cambios aplicados en esta entrega:
+- Se conserva el contenido histórico en src/lib/legacy-content.ts y se mantiene la fusión con Supabase como respaldo.
+- Se mantiene la retirada de fichas como despublicación no destructiva; el administrador explica que las fichas se conservan.
+- El formulario de inicio de sesión ya no precarga el correo personal del administrador.
+- Se incorpora una migración opcional para retirar la política de borrado físico de fichas de catálogo en Supabase. Revisar y aplicar en el proyecto correcto antes de desplegar; no se ejecuta automáticamente desde el ZIP.
+- Se corrige el verificador estático para reflejar la implementación actual.
+
+Comprobaciones ejecutadas:
+- ZIP de origen: 207 archivos, testzip sin errores.
+- Verificador estático: 18 comprobaciones superadas.
+
+Pendiente y expresamente no afirmado:
+- No se ha ejecutado build, typecheck, ESLint ni Vitest; en el entorno no están instaladas las dependencias pnpm/node_modules.
+- No se ha desplegado a Netlify ni comprobado el sitio publicado en navegador.
+- La migración anti-borrado agregada en esta entrega no se aplica automáticamente; requiere revisión y aplicación explícita en Supabase.
+- Las imágenes incluidas se preservan; la revisión visual de cada pantalla y de cada fotografía debe completarse tras ejecutar la web.

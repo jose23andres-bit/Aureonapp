@@ -1,0 +1,201 @@
+/* BROLY · isolated styles. Every selector is scoped to .bly-* — nothing here touches AUREON's global CSS.
+   Imported only by src/broly/broly-dock.tsx (and reused by the /broly page for the dragonfly). */
+
+.bly-root{--bly-bg:#081012;--bly-panel:#0b1416f2;--bly-line:#5ef2d62e;--bly-cyan:#5ef2d6;--bly-violet:#a99bff;--bly-gold:#d5b779;--bly-text:#e7f3ef;--bly-muted:#93a8a2;font-family:'Manrope',system-ui,sans-serif;color:var(--bly-text)}
+.bly-root *,.bly-root *::before,.bly-root *::after{box-sizing:border-box}
+
+/* ---------- Dragonfly ---------- */
+.bly-dragonfly{display:block;overflow:visible}
+.bly-dragonfly .bly-wing{transform-box:fill-box;transform-origin:0% 50%}
+.bly-dragonfly .bly-body-float{transform-box:view-box;transform-origin:50% 50%;animation:bly-hover 4.8s ease-in-out infinite}
+.bly-dragonfly .bly-wing-fore{animation:bly-flap-rest 3.2s ease-in-out infinite}
+.bly-dragonfly .bly-wing-hind{animation:bly-flap-rest 3.2s ease-in-out infinite;animation-delay:-1.6s}
+.bly-dragonfly .bly-wing-iris{opacity:.55;animation:bly-iris 6s ease-in-out infinite}
+.bly-dragonfly .bly-circuit-line{stroke-dasharray:6 5;animation:bly-flow 3.5s linear infinite;opacity:.65}
+.bly-dragonfly .bly-node{opacity:.7}
+.bly-dragonfly .bly-core{opacity:.85;animation:bly-pulse 3.5s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 50%}
+.bly-dragonfly .bly-eyes{transition:filter .3s}
+
+.bly-dragonfly[data-state=active] .bly-wing-fore,.bly-dragonfly[data-state=active] .bly-wing-hind{animation-duration:1.4s}
+.bly-dragonfly[data-state=listening] .bly-eyes{filter:drop-shadow(0 0 4px #5ef2d6)}
+.bly-dragonfly[data-state=listening] .bly-core{fill:#5ef2d6;animation-duration:.9s}
+.bly-dragonfly[data-state=thinking] .bly-wing-fore,.bly-dragonfly[data-state=thinking] .bly-wing-hind{animation:bly-flap .16s ease-in-out infinite alternate}
+.bly-dragonfly[data-state=thinking] .bly-wing-hind{animation-delay:-.08s}
+.bly-dragonfly[data-state=thinking] .bly-circuit-line{animation-duration:.8s;opacity:1}
+.bly-dragonfly[data-state=thinking] .bly-core{fill:#a99bff}
+.bly-dragonfly[data-state=speaking] .bly-eyes{animation:bly-eye-glow .7s ease-in-out infinite alternate}
+.bly-dragonfly[data-state=speaking] .bly-core{fill:#d5b779;animation-duration:.7s}
+.bly-dragonfly[data-state=executing] .bly-wing-fore,.bly-dragonfly[data-state=executing] .bly-wing-hind{animation:bly-flap .11s linear infinite alternate}
+.bly-dragonfly[data-state=executing] .bly-wing-hind{animation-delay:-.055s}
+.bly-dragonfly[data-state=executing] .bly-circuit-line{stroke:#d5b779;animation-duration:.5s;opacity:1}
+.bly-dragonfly[data-state=executing] .bly-node{fill:#5ef2d6;opacity:1}
+.bly-dragonfly[data-state=executing] .bly-core{fill:#d5b779}
+
+@keyframes bly-hover{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(-1.2deg)}}
+@keyframes bly-flap-rest{0%,100%{transform:scaleX(1) rotate(0)}50%{transform:scaleX(.94) rotate(-2.5deg)}}
+@keyframes bly-flap{from{transform:scaleX(1) rotate(2deg)}to{transform:scaleX(.78) rotate(-7deg)}}
+@keyframes bly-iris{0%,100%{opacity:.25}50%{opacity:.75}}
+@keyframes bly-flow{to{stroke-dashoffset:-22}}
+@keyframes bly-pulse{0%,100%{transform:scale(1);opacity:.75}50%{transform:scale(1.35);opacity:1}}
+@keyframes bly-eye-glow{from{filter:drop-shadow(0 0 1px #5ef2d6)}to{filter:drop-shadow(0 0 5px #d5b779)}}
+@keyframes bly-spin{to{transform:rotate(360deg)}}
+@keyframes bly-ring{0%{transform:scale(.8);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+@keyframes bly-in{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+
+/* ---------- Floating launcher (sits above AUREON's sales assistant, never over it) ---------- */
+.bly-fab{position:fixed;right:22px;bottom:96px;z-index:1001;width:60px;height:60px;padding:0;margin:0;display:grid;place-items:center;border-radius:50%;border:1px solid #5ef2d655;background:radial-gradient(circle at 50% 40%,#12302f 0%,#081012 72%);box-shadow:0 10px 30px #000a,0 0 0 1px #d5b77926,inset 0 0 18px #5ef2d61f;cursor:pointer;color:inherit;transition:transform .25s,box-shadow .25s,opacity .25s,visibility .25s}
+.bly-fab::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid #5ef2d64d;animation:bly-ring 3.6s ease-out infinite;pointer-events:none}
+.bly-fab:hover{transform:translateY(-2px);box-shadow:0 14px 34px #000c,0 0 22px #5ef2d63d}
+.bly-fab:focus-visible{outline:2px solid var(--bly-cyan);outline-offset:4px}
+/* Step aside while other AUREON overlays are open */
+body:has(.sales-agent-panel) .bly-fab,body:has(.aureon-lightbox) .bly-fab,body:has(.zoom) .bly-fab,body:has(.ai-library-modal-backdrop) .bly-fab{opacity:0;visibility:hidden;pointer-events:none}
+
+/* ---------- Panel ---------- */
+.bly-panel{position:fixed;right:18px;bottom:18px;z-index:1100;width:min(420px,calc(100vw - 24px));height:min(660px,calc(100dvh - 36px));display:flex;flex-direction:column;background:linear-gradient(165deg,#0d1b1d 0%,var(--bly-bg) 55%,#0a0d12 100%);border:1px solid var(--bly-line);border-radius:22px;box-shadow:0 24px 70px #000d,0 0 0 1px #d5b7791f,inset 0 1px 0 #ffffff0d;overflow:hidden;outline:none;animation:bly-in .28s ease-out}
+.bly-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px 10px 10px;border-bottom:1px solid var(--bly-line);background:radial-gradient(ellipse at 15% 0%,#5ef2d61c,transparent 60%)}
+.bly-identity{display:flex;align-items:center;gap:8px;min-width:0}
+.bly-identity strong{display:block;font-size:15px;letter-spacing:.32em;color:#f1fbf8;font-weight:700}
+.bly-identity small{display:block;font-size:11px;color:var(--bly-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:240px}
+.bly-head-fly{display:grid;place-items:center;width:50px;height:50px;flex:0 0 50px}
+.bly-head-actions{display:flex;gap:6px}
+.bly-root button{font:inherit;color:inherit;margin:0}
+.bly-head-actions button,.bly-row-actions button,.bly-row-actions a,.bly-msg-tools button,.bly-section-head button{display:grid;place-items:center;width:34px;height:34px;padding:0;border-radius:10px;border:1px solid #ffffff14;background:#ffffff08;color:var(--bly-text);cursor:pointer}
+.bly-head-actions button:hover,.bly-row-actions button:hover{border-color:#5ef2d666;color:var(--bly-cyan)}
+.bly-head-actions button[aria-pressed=true]{color:var(--bly-cyan);border-color:#5ef2d666}
+.bly-tabs{display:flex;gap:4px;padding:8px 10px;border-bottom:1px solid #ffffff0d}
+.bly-tabs button{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 6px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--bly-muted);font-size:12px;cursor:pointer}
+.bly-tabs button.is-active{background:#5ef2d614;border-color:#5ef2d640;color:#eafffa}
+.bly-root p{margin:0;font-size:13px;line-height:1.55;color:var(--bly-text)}
+.bly-root small{display:block;font-size:11px;line-height:1.45;color:var(--bly-muted)}
+.bly-root .bly-muted{color:var(--bly-muted);font-size:12px}
+.bly-error{display:flex;align-items:flex-start;gap:8px;margin:8px 10px 0!important;padding:9px 11px;border-radius:10px;background:#3a1514;border:1px solid #c94d4055;color:#ffd9d4!important;font-size:12px!important}
+.bly-messages,.bly-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:14px 12px;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin;scrollbar-color:#5ef2d633 transparent}
+.bly-welcome{padding:14px;border:1px dashed #5ef2d633;border-radius:14px;display:grid;gap:6px}
+.bly-msg{display:flex;flex-direction:column;gap:6px;max-width:92%}
+.bly-msg>p{padding:10px 12px;border-radius:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.bly-msg-assistant{align-self:flex-start}
+.bly-msg-assistant>p{background:#10272a;border:1px solid #5ef2d624;border-top-left-radius:4px}
+.bly-msg-user{align-self:flex-end}
+.bly-msg-user>p{background:#2a2416;border:1px solid #d5b77940;border-top-right-radius:4px;color:#f8f0dc}
+.bly-msg-tools{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--bly-muted)}
+.bly-msg-tools span{margin-right:4px}
+.bly-msg-tools button{width:26px;height:26px;border-radius:8px}
+.bly-msg-tools button[aria-pressed=true]{color:var(--bly-cyan);border-color:#5ef2d666}
+.bly-thinking{display:flex;align-items:center;gap:6px}
+.bly-spin{animation:bly-spin 1s linear infinite}
+
+/* Action cards: proposed → running → completed → verified */
+.bly-action{display:grid;gap:6px;padding:11px 12px;border-radius:14px;border:1px solid #ffffff1a;background:#0c1719}
+.bly-action-proposed{border-color:#d5b77966;background:linear-gradient(160deg,#1c1a12,#0c1719)}
+.bly-action-running{border-color:#a99bff66}
+.bly-action-verified{border-color:#3bd49066}
+.bly-action-failed,.bly-action-needs_connection{border-color:#c94d4066}
+.bly-action-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.bly-action-head strong{font-size:12.5px;color:#f1fbf8}
+.bly-action-buttons{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.bly-action-buttons button{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;border:1px solid transparent}
+.bly-approve{background:var(--bly-gold);color:#14110a!important}
+.bly-reject{background:transparent;border-color:#ffffff26!important}
+.bly-badge{display:inline-block;flex-shrink:0;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.02em;background:#ffffff12;color:#cfe0db;white-space:nowrap}
+.bly-badge-proposed{background:#d5b77926;color:#f0d9a6}
+.bly-badge-running,.bly-badge-queued{background:#a99bff26;color:#d6cfff}
+.bly-badge-verified,.bly-badge-completed{background:#3bd49022;color:#9ff0c6}
+.bly-badge-failed,.bly-badge-needs_connection{background:#c94d4026;color:#ffb4aa}
+.bly-badge-rejected,.bly-badge-expired,.bly-badge-cancelled{background:#ffffff10;color:#9aa8a4}
+.bly-badge-planned{background:#5ef2d61f;color:#a9fbe9}
+.bly-ok-text{color:#9ff0c6!important}
+.bly-err-text{color:#ffb4aa!important}
+.bly-root details summary{cursor:pointer;font-size:11px;color:var(--bly-cyan);padding:2px 0}
+.bly-root pre{margin:6px 0 0;max-height:220px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:11.5px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;background:#050b0c;border:1px solid #ffffff10;border-radius:10px;padding:10px;color:#d6e6e2}
+
+/* Composer */
+.bly-compose{display:flex;gap:8px;align-items:flex-end;padding:10px 10px 6px;border-top:1px solid var(--bly-line);margin:0}
+.bly-root textarea,.bly-root select{display:block;width:100%;min-height:0;margin:0;padding:10px 12px;border-radius:12px;border:1px solid #ffffff1f;background:#050b0c;color:var(--bly-text);font:inherit;font-size:13px;line-height:1.45;resize:none}
+.bly-root textarea:focus-visible,.bly-root select:focus-visible{outline:2px solid #5ef2d680;outline-offset:1px}
+.bly-compose textarea{flex:1;max-height:120px}
+.bly-compose-actions{display:flex;gap:6px}
+.bly-mic,.bly-send{display:grid;place-items:center;width:42px;height:42px;padding:0;border-radius:12px;cursor:pointer;border:1px solid #5ef2d640;background:#0f2427;color:var(--bly-cyan)}
+.bly-send{background:var(--bly-gold);border-color:var(--bly-gold);color:#14110a}
+.bly-mic.is-listening{background:#5ef2d6;color:#04211d;box-shadow:0 0 0 4px #5ef2d633}
+.bly-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 12px 10px;font-size:11px;color:var(--bly-muted)}
+.bly-foot button{display:inline-flex;align-items:center;gap:5px;padding:4px 0;border:0;background:none;color:var(--bly-cyan);font-size:11px;cursor:pointer}
+.bly-foot span{display:inline-flex;align-items:center;gap:5px}
+
+/* Memory & tasks */
+.bly-memory-form{display:grid;gap:8px;margin:0}
+.bly-memory-form>div{display:flex;gap:6px;flex-wrap:wrap}
+.bly-memory-form select{width:auto;flex:1;min-width:120px}
+.bly-memory-form button,.bly-connection button{padding:9px 12px;border-radius:10px;border:1px solid #5ef2d640;background:#0f2427;color:#eafffa;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.bly-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.bly-list>li{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid #ffffff12;background:#0b1517}
+.bly-list>li>div:first-child{display:grid;gap:5px;min-width:0}
+.bly-row-actions{display:flex;gap:4px;align-items:flex-start}
+.bly-chip{justify-self:start;font-size:10px;padding:2px 8px;border-radius:999px;background:#a99bff22;color:#d6cfff}
+.bly-steps{margin:4px 0 0;padding-left:18px;display:grid;gap:4px}
+.bly-steps li{font-size:12px;color:var(--bly-text)}
+.bly-steps label{display:flex;align-items:flex-start;gap:7px;margin:0;font-size:12px;color:var(--bly-text);cursor:pointer}
+.bly-steps input{display:inline-block;width:auto;min-height:0;margin:2px 0 0;padding:0;accent-color:#5ef2d6}
+.bly-connection{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border-radius:12px;background:#0f2427;border:1px solid #5ef2d62e;font-size:12px}
+.bly-connection span{display:inline-flex;align-items:center;gap:6px}
+.bly-section-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.04em;color:#cfe0db}
+.bly-section-head button{width:28px;height:28px}
+.bly-activity{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.bly-activity li{display:grid;grid-template-columns:auto 1fr;column-gap:7px;font-size:12px;color:var(--bly-text);align-items:start}
+.bly-activity li svg{margin-top:3px;color:var(--bly-cyan)}
+.bly-activity li small{grid-column:2}
+.bly-link{display:inline-flex;align-items:center;gap:6px;color:var(--bly-cyan);font-size:12px;text-decoration:underline;text-underline-offset:3px}
+
+/* Mobile: full-height sheet that respects the safe areas; launcher stays clear of the sales assistant */
+@media (max-width:600px){
+  .bly-fab{right:14px;bottom:88px;width:54px;height:54px}
+  .bly-panel{inset:0;right:0;bottom:0;width:100%;height:100dvh;border-radius:0;border:0;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+  .bly-identity small{max-width:180px}
+  .bly-root textarea,.bly-root select{font-size:16px} /* avoids iOS zoom on focus */
+}
+
+@media (prefers-reduced-motion:reduce){
+  .bly-root *,.bly-root *::after,.bly-dragonfly *{animation:none!important;transition:none!important}
+}
+
+/* /broly page emblem (replaces the former generic icon; page layout unchanged) */
+.bly-page-emblem{width:104px;height:104px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#12302f 0%,#081012 72%);border:1px solid #5ef2d655;box-shadow:0 14px 35px #0b1c1a40,0 0 0 1px #d5b77940}
+.bly-root small.bly-verify{display:flex;gap:5px;align-items:flex-start}.bly-verify svg{flex:0 0 12px;margin-top:2px}
+.bly-root .bly-voice-note{padding-top:0;margin-top:-6px;font-size:10px;opacity:.8}
+.bly-root .bly-scope{display:flex;align-items:center;gap:6px;flex-basis:100%;margin:2px 0 0;font-size:11px;color:var(--bly-muted);cursor:pointer}.bly-root .bly-scope input{display:inline-block;width:auto;min-height:0;margin:0;padding:0;accent-color:#5ef2d6}
+
+/* ---------- BROLY modo guerrero (original AUREON) ---------- */
+.bly-avatar{position:relative;display:inline-grid;place-items:center;flex:0 0 auto}
+.bly-avatar-layer{position:relative;display:grid;place-items:center}
+.bly-avatar-warrior{animation:bly-transform .6s cubic-bezier(.2,.9,.25,1.25) both}
+.bly-avatar-dragonfly{animation:bly-revert .45s ease-out both}
+.bly-flash{position:absolute;inset:-35%;border-radius:50%;background:radial-gradient(circle,#fffbe8 0%,#f5c84ccc 30%,#5ef2d655 55%,transparent 72%);pointer-events:none;animation:bly-flash .7s ease-out forwards}
+.bly-warrior{display:block;overflow:visible}
+.bly-warrior .bly-w-aura{transform-box:view-box;transform-origin:50% 56%;animation:bly-w-aura 1.4s ease-in-out infinite}
+.bly-warrior .bly-w-flame{transform-box:fill-box;transform-origin:50% 100%;animation:bly-w-flame .5s ease-in-out infinite alternate}
+.bly-warrior .bly-w-hair{transform-box:fill-box;transform-origin:50% 100%;animation:bly-w-hair 1.8s ease-in-out infinite}
+.bly-warrior .bly-w-sparks{animation:bly-w-sparks 1s steps(2) infinite}
+.bly-warrior[data-state=listening] .bly-w-aura{filter:hue-rotate(140deg) saturate(1.3)}
+.bly-warrior[data-state=listening] .bly-w-eyes{animation:bly-w-eyes 1s ease-in-out infinite}
+.bly-warrior[data-state=thinking] .bly-w-aura{animation-duration:.9s}
+.bly-warrior[data-state=speaking] .bly-w-eyes{animation:bly-w-eyes .45s ease-in-out infinite alternate}
+.bly-warrior[data-state=speaking] .bly-w-mouth{transform-box:fill-box;transform-origin:50% 50%;animation:bly-w-mouth .22s ease-in-out infinite alternate}
+.bly-warrior[data-state=executing] .bly-w-aura{animation-duration:.5s;filter:saturate(1.6) brightness(1.15)}
+.bly-warrior[data-state=executing] .bly-w-flame{animation-duration:.22s}
+.bly-thinking .bly-avatar{margin-right:2px}
+@keyframes bly-transform{0%{transform:scale(.25) rotate(-25deg);opacity:0;filter:brightness(3)}60%{transform:scale(1.18) rotate(4deg);opacity:1;filter:brightness(1.6)}100%{transform:none;filter:none}}
+@keyframes bly-revert{from{transform:scale(1.3);opacity:0}to{transform:none;opacity:1}}
+@keyframes bly-flash{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.6);opacity:0}}
+@keyframes bly-w-aura{0%,100%{transform:scale(.95);opacity:.78}50%{transform:scale(1.06);opacity:1}}
+@keyframes bly-w-flame{from{transform:scaleY(.92)}to{transform:scaleY(1.08) translateY(-3px)}}
+@keyframes bly-w-hair{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px) scaleY(1.03)}}
+@keyframes bly-w-sparks{0%{opacity:1}100%{opacity:.2}}
+@keyframes bly-w-eyes{from{filter:drop-shadow(0 0 1px #5ef2d6)}to{filter:drop-shadow(0 0 6px #f5c84c)}}
+@keyframes bly-w-mouth{from{transform:scaleY(1)}to{transform:scaleY(2.6)}}
+@media (prefers-reduced-motion:reduce){.bly-avatar *,.bly-flash{animation:none!important}.bly-flash{display:none}}
+
+/* BROLY siempre es guerrero: forma base en reposo, con una respiración suave. */
+.bly-avatar-base{animation:bly-revert .45s ease-out both}
+.bly-warrior.is-base .bly-w-aura{transform-box:view-box;transform-origin:50% 56%;animation:bly-w-calm 3.2s ease-in-out infinite}
+.bly-warrior.is-base .bly-w-hair{animation:none}
+@keyframes bly-w-calm{0%,100%{opacity:.55;transform:scale(.97)}50%{opacity:.9;transform:scale(1.02)}}
+@media (prefers-reduced-motion:reduce){.bly-warrior.is-base .bly-w-aura{animation:none}}
