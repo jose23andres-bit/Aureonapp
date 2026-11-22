@@ -1,225 +1,315 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="intro-lock">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>AUREON AI PROJECT | Coches de lujo, villas y oportunidades</title>
-  <meta name="description" content="Coches de lujo, villas exclusivas, ocio VIP y oportunidades seleccionadas. Atención personal y contacto directo. By José Andrés Gómez, Madrid.">
-  <meta name="theme-color" content="#0b0b09">
-  <link rel="canonical" href="https://aureonaiproject.netlify.app/">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="AUREON AI PROJECT">
-  <meta property="og:title" content="AUREON AI PROJECT | El lujo de elegir. El poder de conectar.">
-  <meta property="og:description" content="Coches de lujo, villas exclusivas, experiencias VIP y oportunidades seleccionadas. By José Andrés Gómez.">
-  <meta property="og:image" content="https://aureonaiproject.netlify.app/og-aureon.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <script>document.documentElement.classList.add("js")</script>
-  <link rel="preload" as="image" href="img/redesign-universe.webp">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AUREON AI PROJECT",
-    "founder": { "@type": "Person", "name": "José Andrés Gómez" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-    "url": "https://aureonaiproject.netlify.app/",
-    "sameAs": ["https://www.youtube.com/@aureonaiproject"]
-  }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AUREON AI PROJECT · By José Andrés Gómez</title>
+<meta name="description" content="Coches extraordinarios, villas únicas y experiencias que merecen vivirse. By José Andrés Gómez.">
+<meta name="theme-color" content="#0b0b09">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/aureon-hero-daylight-redesign.webp">
+<noscript><style>.intro{display:none!important}html.intro-lock,html.intro-lock body{overflow:auto!important}.hero-photo img,.hero-content>*{animation:none!important;opacity:1!important;transform:none!important}</style></noscript>
+<style>
+:root{--ink:#0b0b09;--ink-2:#12110e;--gold:#d5b779;--gold-hi:#f3dfa8;--gold-lo:#a8823f;--text:#f3f0e8;--muted:#a9a497;--line:#d5b77930;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:var(--ink);color:var(--text);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+html.intro-lock,html.intro-lock body{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px;border-radius:6px}
+
+/* ============================ INTRO ============================ */
+.intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden}
+.intro[hidden]{display:none}
+.intro-half{position:absolute;left:0;right:0;height:50.5%;background:var(--ink);transition:transform 1.05s cubic-bezier(.77,0,.18,1)}
+.intro-half.top{top:0}.intro-half.bottom{bottom:0}
+.intro-half::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-hi) 50%,transparent);box-shadow:0 0 18px var(--gold);opacity:0;transition:opacity .25s}
+.intro-half.top::after{bottom:0}.intro-half.bottom::after{top:0}
+.intro canvas{position:absolute;inset:0;z-index:1;opacity:0;transition:opacity 1.2s}
+.intro-glow{position:absolute;z-index:1;width:min(900px,160vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#d5b77930 0%,#d5b7790d 35%,transparent 65%);opacity:0;transform:scale(.6);transition:opacity 1.4s,transform 2.4s var(--ease)}
+.intro.is-on canvas{opacity:1}
+.intro.is-on .intro-glow{opacity:1;transform:scale(1);animation:breathe 4s ease-in-out 1.4s infinite}
+@keyframes breathe{50%{transform:scale(1.06)}}
+
+.intro-stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px;transition:opacity .7s,transform .9s var(--ease),filter .7s}
+
+/* Monograma A: se dibuja el trazo y después se rellena de oro */
+.mono-wrap{position:relative;display:grid;place-items:center;margin-bottom:clamp(18px,4vh,30px)}
+.mono-wrap::before{content:"";position:absolute;width:120%;aspect-ratio:1;border-radius:50%;border:1px solid var(--gold-hi);opacity:0;transform:scale(.5)}
+.intro.is-fill .mono-wrap::before{animation:ring 1.3s var(--ease) forwards}
+@keyframes ring{0%{opacity:.9;transform:scale(.5)}100%{opacity:0;transform:scale(2.6)}}
+.mono{width:clamp(84px,21vw,128px);height:auto;overflow:visible}
+.mono path{fill-opacity:0;stroke-width:.55;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.intro.is-draw .mono path{stroke-dashoffset:0;transition:stroke-dashoffset 1.25s cubic-bezier(.65,0,.35,1)}
+.intro.is-draw .mono path+path{transition-delay:.35s}
+.intro.is-fill .mono path{fill-opacity:1;stroke-opacity:.35;transition:fill-opacity .7s ease,stroke-opacity .7s ease}
+.intro.is-fill .mono{filter:drop-shadow(0 0 22px #d5b77970);transition:filter 1s}
+
+/* Wordmark */
+.word{display:flex;flex-direction:column;align-items:center}
+.word-main{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(46px,13.5vw,112px);line-height:1;letter-spacing:.16em;padding-left:.16em;white-space:nowrap}
+.word-main span{display:inline-block;background:linear-gradient(180deg,#fff4d6 0%,#ecd59f 38%,#d5b779 62%,#9f7a3a 100%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;transform:translateY(.38em);filter:blur(12px)}
+.intro.is-word .word-main span{animation:letter .95s var(--ease) calc(var(--i) * 75ms) forwards}
+@keyframes letter{to{opacity:1;transform:none;filter:blur(0)}}
+.word-main::after{content:"";position:absolute;inset:-10% -20%;background:linear-gradient(105deg,transparent 38%,#fffaf0 50%,transparent 62%);background-size:250% 100%;background-position:120% 0;mix-blend-mode:overlay;opacity:0;pointer-events:none}
+.intro.is-sheen .word-main::after{animation:sheen 1.25s cubic-bezier(.45,0,.2,1) forwards}
+@keyframes sheen{0%{opacity:1;background-position:120% 0}100%{opacity:1;background-position:-20% 0}}
+.word-sub{display:flex;align-items:center;gap:14px;margin-top:clamp(10px,2vh,16px);color:var(--gold);font-size:clamp(11px,2.7vw,14px);font-weight:500;letter-spacing:.55em;padding-left:.55em;opacity:0;transform:translateY(8px);transition:opacity .8s .45s,transform .8s var(--ease) .45s}
+.word-sub i{display:block;height:1px;width:0;background:linear-gradient(90deg,transparent,var(--gold));transition:width 1s var(--ease) .55s}
+.word-sub i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
+.intro.is-word .word-sub{opacity:1;transform:none}
+.intro.is-word .word-sub i{width:clamp(34px,10vw,84px)}
+
+/* Firma */
+.sign{display:flex;flex-direction:column;align-items:center;margin-top:clamp(26px,5vh,42px);opacity:0;transform:translateY(14px);transition:opacity .9s,transform 1s var(--ease)}
+.intro.is-sign .sign{opacity:1;transform:none}
+.sign-ring{position:relative;width:62px;height:62px;border-radius:50%;padding:2px;margin-bottom:14px;background:conic-gradient(from 0deg,#9f7a3a,#fff4d6,#d5b779,#6f5326,#9f7a3a);animation:spin 6s linear infinite}
+.sign-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid var(--ink);animation:spin 6s linear infinite reverse}
+@keyframes spin{to{transform:rotate(1turn)}}
+.sign-text{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(22px,5.6vw,30px);color:var(--text);letter-spacing:.01em}
+.sign-text small{font-size:.7em;color:var(--gold);margin-right:.25em}
+.sign-line{display:block;height:1px;width:0;margin-top:10px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transition:width 1.2s var(--ease) .3s}
+.intro.is-sign .sign-line{width:min(260px,60vw)}
+
+/* Salida: el telón se abre */
+.intro.is-exit .intro-stage{opacity:0;transform:scale(1.08);filter:blur(8px)}
+.intro.is-exit canvas,.intro.is-exit .intro-glow{opacity:0;transition:opacity .5s}
+.intro.is-exit .intro-half::after{opacity:1}
+.intro.is-exit .intro-half.top{transform:translateY(-101%);transition-delay:.25s}
+.intro.is-exit .intro-half.bottom{transform:translateY(101%);transition-delay:.25s}
+.intro.is-exit .intro-ui{opacity:0}
+
+.intro-ui{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:0 20px calc(env(safe-area-inset-bottom,0px) + 22px);display:flex;justify-content:flex-end;transition:opacity .4s}
+.intro-skip{appearance:none;border:1px solid #d5b77955;background:#0b0b09b3;color:var(--gold-hi);font:600 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;padding:11px 18px;border-radius:999px;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.intro-skip:hover{border-color:var(--gold)}
+.intro-progress{position:absolute;left:0;bottom:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold-lo),var(--gold-hi));box-shadow:0 0 10px var(--gold)}
+.intro.is-on .intro-progress{width:100%;transition:width var(--dur,4.7s) linear}
+
+/* ============================ LANDING ============================ */
+.site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:calc(env(safe-area-inset-top,0px) + 12px) clamp(16px,4vw,48px) 12px;background:#0b0b09cc;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand svg{width:30px;height:30px}
+.brand b{display:block;font:600 19px/1 var(--serif);letter-spacing:.2em}
+.brand small{display:block;margin-top:4px;font-size:8px;letter-spacing:.5em;color:var(--gold)}
+.contact{margin-left:auto;display:inline-flex;align-items:center;gap:9px;padding:5px 14px 5px 5px;border:1px solid #d5b77966;border-radius:999px;background:var(--ink-2);color:#ead7a6;font-size:12px;font-weight:600}
+.contact img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+@media(max-width:420px){.contact{padding:3px}.contact span{display:none}}
+
+.hero{position:relative;isolation:isolate;min-height:calc(100svh - 64px);display:flex;align-items:flex-end;overflow:hidden}
+.hero-photo{position:absolute;inset:0;z-index:-2}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.16)}
+body.is-revealed .hero-photo img{animation:kenburns 7s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes kenburns{to{transform:scale(1.02)}}
+.hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0b0b0933 0%,#0b0b0900 30%,#0b0b0999 62%,var(--ink) 100%)}
+.hero-content{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(18px,5vw,64px) clamp(22px,5vh,48px)}
+.hero-content>*{opacity:0;transform:translateY(22px)}
+body.is-revealed .hero-content>*{animation:rise .95s var(--ease) forwards;animation-delay:calc(.35s + var(--d,0) * .12s)}
+@keyframes rise{to{opacity:1;transform:none}}
+.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 14px;color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.26em;text-transform:uppercase}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.hero h1{margin:0;font:500 clamp(44px,11vw,104px)/.98 var(--serif);letter-spacing:-.01em;text-wrap:balance}
+.hero h1 em{font-style:italic;background:linear-gradient(180deg,#fff4d6,#d5b779 70%,#a8823f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{margin:18px 0 0;max-width:34em;color:#e4dfd2;font-size:clamp(15px,3.8vw,18px)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;max-width:480px}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:10px;min-height:54px;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px}
+.btn-gold{background:linear-gradient(180deg,#ecd59f,#c9a35f);color:#15120a}
+.btn-line{border:1px solid #f3f0e8cc;color:var(--text)}
+.btn svg{width:17px;height:17px;flex:none}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;border-top:1px solid var(--line);max-width:760px}
+.cats a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 4px;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-align:center;color:#ddd6c4;border-bottom:1px solid var(--line)}
+.cats a:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.cats svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
+.cats a:hover{color:var(--gold-hi)}
+.cats a:hover svg{transform:translateY(-3px)}
+@media(min-width:900px){.cats{grid-template-columns:repeat(6,1fr)}.cats a:not(:nth-child(3n)){border-right:0}.cats a:not(:last-child){border-right:1px solid var(--line)}.actions{grid-template-columns:auto auto;justify-content:start}}
+
+.signature{display:grid;gap:26px;align-items:center;max-width:1180px;margin:0 auto;padding:clamp(56px,10vw,110px) clamp(18px,5vw,64px)}
+.signature figure{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:1}
+.signature figure img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.signature h2{margin:0 0 14px;font:500 clamp(34px,8vw,60px)/1.02 var(--serif)}
+.signature h2 em{color:var(--gold-hi)}
+.signature p{color:#d6d0c1;max-width:34em}
+.tags{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 26px;color:var(--muted);font-size:10px;letter-spacing:.24em;text-transform:uppercase}
+@media(min-width:900px){.signature{grid-template-columns:.85fr 1.15fr;gap:64px}}
+
+.foot{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:24px clamp(18px,5vw,64px) calc(env(safe-area-inset-bottom,0px) + 28px);border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.replay{appearance:none;border:1px solid #d5b77966;background:transparent;color:var(--gold-hi);font:600 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:11px 16px;border-radius:999px;cursor:pointer}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero-content>*{opacity:1;transform:none}.hero-photo img{transform:none}}
+</style>
 </head>
 <body>
-  <a class="skip" href="#contenido">Saltar al contenido</a>
 
-  <header class="topbar" id="topbar">
-    <a class="brand" href="#inicio" aria-label="AUREON AI PROJECT, inicio">
-      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 4 29h6l2.2-5h7.6l2.2 5h6L16 3Zm0 11.6L18.3 20h-4.6L16 14.6Z"/></svg>
-      <span class="brand__text">AUREON<small>AI PROJECT</small></span>
-    </a>
-    <nav class="desk-nav" aria-label="Principal">
-      <a href="#explora">Explorar</a>
-      <a href="#sobre">El proyecto</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#afiliacion">Ofertas</a>
-    </nav>
-    <a class="btn btn--sm" href="https://wa.me/message/HZA7ZUG4DJ7ZK1" target="_blank" rel="noopener">Contacto privado</a>
-  </header>
-
-  <main id="contenido">
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-      <img class="hero__bg" src="img/redesign-universe.webp" alt="" width="636" height="805" fetchpriority="high">
-      <div class="hero__shade"></div>
-      <div class="wrap hero__inner">
-        <p class="eyebrow">Una visión. Un universo de posibilidades.</p>
-        <h1>El lujo de elegir.<br><em>El poder de conectar.</em></h1>
-        <p class="lead">Coches extraordinarios, villas únicas y experiencias que merecen vivirse. Todo empieza con una conversación.</p>
-        <div class="cta-row">
-          <a class="btn" href="#explora">Explorar el universo</a>
-          <a class="btn btn--ghost" href="https://wa.me/message/HZA7ZUG4DJ7ZK1" target="_blank" rel="noopener">Hablar por WhatsApp</a>
-        </div>
-        <p class="byline">By José Andrés Gómez · Madrid, España</p>
-      </div>
-    </section>
-
-    <!-- CONFIANZA -->
-    <section class="trust" aria-label="Cómo trabajamos">
-      <ul class="wrap trust__list">
-        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/></svg></span><strong>Atención personalizada</strong></li>
-        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6 .9-4.4 4.2 1 6-5.3-2.8-5.3 2.8 1-6L3.3 9.4l6-.9L12 3Z"/></svg></span><strong>Selección con criterio</strong></li>
-        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span><strong>Experiencias a tu medida</strong></li>
-        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H9l-4 4V5Z"/></svg></span><strong>Contacto directo</strong></li>
-      </ul>
-    </section>
-
-    <!-- EXPLORA -->
-    <section class="section" id="explora">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <p class="eyebrow">Explora Aureon</p>
-          <h2>Un universo para ir más allá</h2>
-          <p class="muted">Elige por dónde empezar. Cada colección se consulta de forma directa y personal.</p>
-        </header>
-        <ul class="cards">
-          <li class="reveal"><a class="card" href="https://aureonaiproject.netlify.app/coches-en-venta">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 15v-3l2-5h14l2 5v3M3 15h18M3 15v3h3v-3m12 0v3h3v-3M7 12h10"/></svg></span>
-            <span class="card__t">Coches de lujo</span><span class="card__d">Compra y venta, con búsqueda por marca y modelo.</span><span class="card__go" aria-hidden="true"></span></a></li>
-          <li class="reveal"><a class="card" href="https://aureonaiproject.netlify.app/villas-en-venta">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg></span>
-            <span class="card__t">Villas exclusivas</span><span class="card__d">Propiedades como escaparate informativo.</span><span class="card__go" aria-hidden="true"></span></a></li>
-          <li class="reveal"><a class="card" href="https://aureonaiproject.netlify.app/alquiler-villas">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21V9m0 0c-1-3-4-4-7-3 2 .5 3.5 1.5 4 3m3 0c1-3 4-4 7-3-2 .5-3.5 1.5-4 3M4 21h16"/></svg></span>
-            <span class="card__t">Villas y estancias</span><span class="card__d">Alquiler de villas en destinos de todo el mundo.</span><span class="card__go" aria-hidden="true"></span></a></li>
-          <li class="reveal"><a class="card" href="https://aureonaiproject.netlify.app/relojes-diamantes-joyas">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 4-3 5 9 11 9-11-3-5H6ZM3 9h18M9 4l-1 5 4 11 4-11-1-5"/></svg></span>
-            <span class="card__t">Relojes y joyas</span><span class="card__d">Piezas seleccionadas con criterio.</span><span class="card__go" aria-hidden="true"></span></a></li>
-          <li class="reveal"><a class="card" href="https://aureonaiproject.netlify.app/alquiler-coches">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0M12 17l4-5"/></svg></span>
-            <span class="card__t">Superdeportivos</span><span class="card__d">Alquiler de coches de alto rendimiento.</span><span class="card__go" aria-hidden="true"></span></a></li>
-          <li class="reveal"><a class="card" href="https://aureonaiproject.netlify.app/ocio-vip">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14l-7 8-7-8Zm7 8v8m-4 0h8"/></svg></span>
-            <span class="card__t">Ocio VIP y eventos</span><span class="card__d">Joy Eslava, sala HEAT y contratación de DJs.</span><span class="card__go" aria-hidden="true"></span></a></li>
-          <li class="reveal"><a class="card" href="https://aureonaiproject.netlify.app/ofertas">
-            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 15.5 7-7M9 9h.01M15 15h.01"/></svg></span>
-            <span class="card__t">Ofertas y afiliación</span><span class="card__d">Promociones sujetas a vigencia.</span><span class="card__go" aria-hidden="true"></span></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section class="section section--alt" id="sobre">
-      <div class="wrap about">
-        <figure class="about__photo reveal">
-          <img src="img/jose-andres.jpeg" alt="José Andrés Gómez, fundador de AUREON AI PROJECT" width="1179" height="1168" loading="lazy">
-        </figure>
-        <div class="about__text reveal">
-          <p class="eyebrow">By José Andrés Gómez</p>
-          <h2>Una visión.<br>Muchas posibilidades.</h2>
-          <p>AUREON AI PROJECT reúne automoción, propiedades, experiencias y recursos digitales en un espacio con una idea clara: ofrecer una conexión directa y una atención personal.</p>
-          <p>Sin ruido. Con criterio, discreción y una conversación como punto de partida.</p>
-          <a class="btn" href="https://wa.me/message/HZA7ZUG4DJ7ZK1" target="_blank" rel="noopener">Conectar por WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section class="section" id="servicios">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <p class="eyebrow">Conecta</p>
-          <h2>Más formas de trabajar juntos</h2>
-        </header>
-        <div class="feature-grid">
-          <article class="feature reveal">
-            <p class="eyebrow">Gestión privada</p>
-            <h3>Vende tu coche</h3>
-            <p>Comparte los detalles y revisamos cada solicitud personalmente. No se publica ningún anuncio automáticamente.</p>
-            <ol class="steps">
-              <li>Cuéntanos sobre tu coche</li>
-              <li>Revisión privada</li>
-              <li>Contacto personal</li>
-            </ol>
-            <a class="link" href="https://aureonaiproject.netlify.app/vender-coche">Enviar solicitud privada</a>
-          </article>
-
-          <article class="feature reveal">
-            <p class="eyebrow">Ocio VIP · Madrid</p>
-            <h3>Joy Eslava y sala HEAT</h3>
-            <p>Reservados, listas VIP y alquiler de la sala HEAT en exclusiva para tu evento privado. Todo sujeto a disponibilidad y confirmación.</p>
-            <a class="link" href="https://aureonaiproject.netlify.app/ocio-vip">Ver ocio VIP</a>
-          </article>
-
-          <article class="feature reveal">
-            <p class="eyebrow">Selección inmobiliaria</p>
-            <h3>Oportunidades seleccionadas</h3>
-            <p>Escaparate informativo. Aureon no vende inmuebles ni procesa pagos por propiedades: solicita información para contrastar documentación, estado y disponibilidad.</p>
-            <a class="link" href="https://aureonaiproject.netlify.app/oportunidades">Ver oportunidades</a>
-          </article>
-
-          <article class="feature reveal">
-            <p class="eyebrow">Laboratorio digital</p>
-            <h3>Aureon AI Lab y recursos</h3>
-            <p>Herramientas, guías y patrones para construir mejores productos digitales, enlazados a sus fuentes originales y sin promesas falsas.</p>
-            <a class="link" href="https://aureonaiproject.netlify.app/ai-lab">Entrar al AI Lab</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- AFILIACION -->
-    <section class="section section--alt" id="afiliacion">
-      <div class="wrap affil reveal">
-        <div>
-          <p class="eyebrow">Ventaja de afiliación · GOMFER</p>
-          <h2>Consulta las promociones disponibles</h2>
-          <p>Entra desde nuestro enlace para consultar las promociones o descuentos que estén disponibles. El código GOMFER se aplica únicamente si la oferta sigue vigente.</p>
-        </div>
-        <div class="affil__act">
-          <a class="btn" href="https://vitastrong.es/?coupon=GOMFER" target="_blank" rel="noopener sponsored">Consultar oferta VitaStrong</a>
-          <p class="fine">Enlace de afiliación. Las promociones, el descuento y las condiciones dependen de VitaStrong.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="section final" id="contacto">
-      <div class="wrap final__inner reveal">
-        <p class="eyebrow">Contacto privado</p>
-        <h2>Empieza por una conversación</h2>
-        <p class="lead">Cuéntanos qué buscas. Respondemos de forma personal y sin compromiso.</p>
-        <div class="cta-row cta-row--center">
-          <a class="btn" href="https://wa.me/message/HZA7ZUG4DJ7ZK1" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-          <a class="btn btn--ghost" href="https://www.youtube.com/@aureonaiproject" target="_blank" rel="noopener">Ver el canal de YouTube</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap footer__inner">
-      <div>
-        <p class="footer__brand">AUREON AI PROJECT</p>
-        <p class="fine">Madrid, España. Las imágenes del universo visual no representan inventario ni disponibilidad.</p>
-      </div>
-      <nav class="footer__links" aria-label="Legal">
-        <a href="https://aureonaiproject.netlify.app/aviso-legal">Aviso legal</a>
-        <a href="https://aureonaiproject.netlify.app/privacidad">Privacidad</a>
-        <a href="https://aureonaiproject.netlify.app/cookies">Cookies</a>
-      </nav>
-      <p class="fine">© <span id="year">2026</span> AUREON AI PROJECT</p>
+<!-- INTRO -->
+<div class="intro" id="intro" role="region" aria-label="Introducción de AUREON AI PROJECT by José Andrés Gómez">
+  <div class="intro-half top"></div>
+  <div class="intro-half bottom"></div>
+  <div class="intro-glow" aria-hidden="true"></div>
+  <canvas aria-hidden="true"></canvas>
+  <div class="intro-stage">
+    <div class="mono-wrap" aria-hidden="true">
+      <svg class="mono" viewBox="0 0 64 64">
+        <defs>
+          <linearGradient id="gFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4d6"/><stop offset=".5" stop-color="#d5b779"/><stop offset="1" stop-color="#9f7a3a"/></linearGradient>
+          <linearGradient id="gStroke" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4d6"/><stop offset="1" stop-color="#d5b779"/></linearGradient>
+        </defs>
+        <path pathLength="1" d="M32 7 6 56h12l14-29 14 29h12Z" fill="url(#gFill)" stroke="url(#gStroke)"/>
+        <path pathLength="1" d="M24 45h19l-5-9H29Z" fill="url(#gFill)" stroke="url(#gStroke)"/>
+      </svg>
     </div>
-  </footer>
+    <div class="word">
+      <div class="word-main" aria-label="AUREON"><span style="--i:0" aria-hidden="true">A</span><span style="--i:1" aria-hidden="true">U</span><span style="--i:2" aria-hidden="true">R</span><span style="--i:3" aria-hidden="true">E</span><span style="--i:4" aria-hidden="true">O</span><span style="--i:5" aria-hidden="true">N</span></div>
+      <div class="word-sub"><i></i><span>AI PROJECT</span><i></i></div>
+    </div>
+    <div class="sign">
+      <span class="sign-ring"><img src="img/jose-andres.jpeg" alt="" width="62" height="62"></span>
+      <span class="sign-text"><small>by</small>José Andrés Gómez</span>
+      <span class="sign-line"></span>
+    </div>
+  </div>
+  <div class="intro-ui"><button type="button" class="intro-skip" id="skip">Saltar intro</button></div>
+  <div class="intro-progress" aria-hidden="true"></div>
+</div>
 
-  <!-- Barra inferior tipo app (solo móvil) -->
-  <nav class="tabbar" aria-label="Navegación rápida">
-    <a href="#inicio" data-tab="inicio" class="is-active"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-7 9 7M5 10v10h14V10"/></svg><span>Inicio</span></a>
-    <a href="#explora" data-tab="explora"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Explorar</span></a>
-    <a href="#servicios" data-tab="servicios"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.5 6 .9-4.4 4.2 1 6-5.3-2.8-5.3 2.8 1-6L3.3 9.400l6-.9L12 3Z"/></svg><span>Servicios</span></a>
-    <a href="#contacto" data-tab="contacto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4V5Z"/></svg><span>Contacto</span></a>
-  </nav>
+<!-- LANDING -->
+<header class="site-header">
+  <a class="brand" href="#inicio" aria-label="AUREON AI PROJECT, inicio">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4d6"/><stop offset=".5" stop-color="#d5b779"/><stop offset="1" stop-color="#9f7a3a"/></linearGradient></defs><path d="M32 7 6 56h12l14-29 14 29h12Z" fill="url(#gB)"/><path d="M24 45h19l-5-9H29Z" fill="url(#gB)"/></svg>
+    <span><b>AUREON</b><small>AI PROJECT</small></span>
+  </a>
+  <a class="contact" href="https://wa.me/message/HZA7ZUG4DJ7ZK1" target="_blank" rel="noopener noreferrer"><img src="img/jose-andres.jpeg" alt="" width="30" height="30"><span>Contacto privado</span></a>
+</header>
 
-  <script src="app.js" defer></script>
+<main id="inicio">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-photo"><img src="img/aureon-hero-daylight-redesign.webp" alt="Villa mediterránea junto al mar con coches deportivos de alta gama" width="1179" height="1080" fetchpriority="high"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+      <p class="eyebrow" style="--d:0">Una visión. Un universo de posibilidades.</p>
+      <h1 id="hero-title" style="--d:1">El lujo de elegir.<br>El poder de <em>conectar.</em></h1>
+      <p class="lead" style="--d:2">Coches extraordinarios, villas únicas y experiencias que merecen vivirse. Todo empieza aquí.</p>
+      <div class="actions" style="--d:3">
+        <a class="btn btn-gold" href="https://aureonaiproject.netlify.app/coches-en-venta">Explorar el universo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-line" href="https://aureonaiproject.netlify.app/sobre-aureon">Conoce AUREON <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <nav class="cats" style="--d:4" aria-label="Categorías">
+        <a href="https://aureonaiproject.netlify.app/coches-en-venta"><svg viewBox="0 0 24 24"><path d="M5 17H3v-5l2-5h14l2 5v5h-2M3 12h18M7 17v2M17 17v2M7 14h.01M17 14h.01M6 17h12"/></svg>Coches de lujo</a>
+        <a href="https://aureonaiproject.netlify.app/villas-en-venta"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3ZM9 20v-6h6v6"/></svg>Villas exclusivas</a>
+        <a href="https://aureonaiproject.netlify.app/alquiler-villas"><svg viewBox="0 0 24 24"><path d="M12 21V10m0 0C10 7 7 6 4 7c2 .5 3.5 1.5 4 3m4 0c1-3 4-4 7-3-2 .5-3.5 1.5-4 3m-3 0c-1-3-3-5-6-5m6 5c1-3 3-5 6-5M8 21h8"/></svg>Villas y estancias</a>
+        <a href="https://aureonaiproject.netlify.app/relojes-diamantes-joyas"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9ZM2 9h20M10 3 8 9l4 12 4-12-2-6"/></svg>Relojes y joyas</a>
+        <a href="https://aureonaiproject.netlify.app/alquiler-coches"><svg viewBox="0 0 24 24"><path d="m12 14 4-4M4.6 19a9 9 0 1 1 14.8 0"/></svg>Superdeportivos</a>
+        <a href="https://aureonaiproject.netlify.app/ofertas"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9h.01M15 15h.01"/></svg>Ofertas y afiliación</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="signature" aria-labelledby="sign-title">
+    <figure><img src="img/jose-andres.jpeg" alt="José Andrés Gómez" width="1179" height="1168" loading="lazy"></figure>
+    <div>
+      <p class="eyebrow">By José Andrés Gómez</p>
+      <h2 id="sign-title">Una visión.<br><em>Muchas posibilidades.</em></h2>
+      <p>AUREON AI PROJECT reúne automoción, propiedades, experiencias y recursos digitales en un espacio con una idea clara: ofrecer una conexión directa y una atención personal.</p>
+      <p>Sin ruido. Con criterio, discreción y una conversación como punto de partida.</p>
+      <div class="tags"><span>Madrid · España</span><span>Lujo con propósito</span><span>Visión personal. Conexiones reales.</span></div>
+      <a class="btn btn-gold" style="display:inline-flex" href="https://wa.me/message/HZA7ZUG4DJ7ZK1" target="_blank" rel="noopener noreferrer">Conectar por WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Vista previa de la intro · todavía no publicada en la web</span>
+  <button type="button" class="replay" id="replay">Ver la intro otra vez</button>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement, body = document.body;
+  var intro = document.getElementById('intro');
+  var canvas = intro.querySelector('canvas'), ctx = canvas.getContext('2d');
+  var mono = intro.querySelector('.mono');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var DURATION = 4700;                       // ms hasta que se abre el telón
+  var STEPS = [[60, 'is-on'], [250, 'is-draw'], [1500, 'is-fill'], [1650, 'is-word'], [2600, 'is-sheen'], [2950, 'is-sign']];
+  var timers = [], raf = 0, running = false, ended = true, particles = [], W = 0, H = 0;
+
+  // ---------- Polvo de oro ----------
+  function size() {
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function dust(n) {
+    for (var i = 0; i < n; i++) particles.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .18, vy: -(.12 + Math.random() * .42), r: .4 + Math.random() * 1.5, a: Math.random(), tw: .008 + Math.random() * .03, life: -1, drag: 1 });
+  }
+  function burst() {
+    var b = mono.getBoundingClientRect(), cx = b.left + b.width / 2, cy = b.top + b.height * .55;
+    var n = W < 600 ? 60 : 95;
+    for (var i = 0; i < n; i++) {
+      var ang = Math.random() * Math.PI * 2, sp = 1.5 + Math.random() * 6.5;
+      particles.push({ x: cx, y: cy, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp, r: .6 + Math.random() * 2, a: 1, tw: 0, life: 1, decay: .01 + Math.random() * .02, drag: .955 });
+    }
+  }
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'lighter';
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+      p.vx *= p.drag; p.vy *= p.drag; p.x += p.vx; p.y += p.vy;
+      var alpha;
+      if (p.life >= 0) { p.life -= p.decay; if (p.life <= 0) { particles.splice(i, 1); continue } alpha = p.life }
+      else { p.a += p.tw; alpha = .25 + Math.abs(Math.sin(p.a)) * .6; if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W } }
+      ctx.fillStyle = 'rgba(213,183,121,' + (alpha * .18).toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 3.2, 0, 6.2832); ctx.fill();
+      ctx.fillStyle = 'rgba(255,244,214,' + alpha.toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
+    }
+    if (running) raf = requestAnimationFrame(frame);
+  }
+
+  // ---------- Línea de tiempo ----------
+  function clearClasses() { intro.className = 'intro' }
+  function finish() {
+    if (ended) return;
+    ended = true;
+    timers.forEach(clearTimeout); timers = [];
+    intro.classList.add('is-on', 'is-draw', 'is-fill', 'is-word', 'is-sign', 'is-exit');
+    body.classList.add('is-revealed');
+    timers.push(setTimeout(function () {
+      running = false; cancelAnimationFrame(raf);
+      intro.hidden = true; root.classList.remove('intro-lock');
+      document.getElementById('replay').focus({ preventScroll: true });
+    }, 1350));
+  }
+  function play() {
+    timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf);
+    window.scrollTo(0, 0);
+    clearClasses(); intro.hidden = false; root.classList.add('intro-lock'); body.classList.remove('is-revealed');
+    void intro.offsetWidth;                        // reinicia las animaciones CSS
+    if (reduce) { ended = false; finish(); return }
+    ended = false; particles = []; size(); dust(W < 600 ? 55 : 105);
+    intro.style.setProperty('--dur', DURATION + 'ms');
+    running = true; raf = requestAnimationFrame(frame);
+    STEPS.forEach(function (s) { timers.push(setTimeout(function () { intro.classList.add(s[1]); if (s[1] === 'is-fill') burst() }, s[0])) });
+    timers.push(setTimeout(finish, DURATION));
+    document.getElementById('skip').focus({ preventScroll: true });
+  }
+
+  document.getElementById('skip').addEventListener('click', finish);
+  document.getElementById('replay').addEventListener('click', play);
+  document.addEventListener('keydown', function (e) { if (!ended && (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); finish() } });
+  window.addEventListener('resize', function () { if (running) size() });
+
+  // Espera a las tipografías (máx. 1,2 s) para que el logotipo no cambie de fuente a mitad.
+  var start = function () { if (!start.done) { start.done = true; play() } };
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(start); setTimeout(start, 1200) } else start();
+})();
+</script>
 </body>
 </html>
